@@ -1,0 +1,71 @@
+\usepackage{xcolor}
+\usepackage{moreverb}
+\usepackage{xargs}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{environ}
+\usepackage[inline]{enumitem}
+
+
+% Pallete
+\definecolor{accent}{HTML}{f29900}
+
+\definecolor{Green}{HTML}{00ad5a}
+\definecolor{Yellow}{HTML}{fab712}
+\definecolor{code}{HTML}{006cff}
+\definecolor{palegray}{HTML}{f6f6f6}
+
+\definecolor{cBody}{HTML}{000000} % Text Color
+\color{cBody}
+
+% Add Colored Text
+\newcommand{\colored}[2]{\color{#1}#2 \color{cBody}}
+
+% Shortcut for special expressions and idioms
+\newcommand{\idiom}[1]{\colored{accent}{\textbf{"#1"}}}
+
+% Shortcut for important pieces of sentences
+\newcommand{\imp}[1]{\colored{cBody}{\textbf{#1}}}
+
+% Shortcut for important equations
+\newcommand{\impeq}[1]{\colored{blue}{\ensuremath{#1}}}
+
+% Shortcut for roman numerals
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+
+
+% Default \noindent paragraphs but \indent also works
+\let\SavedIndent\indent
+\protected\def\indent{%
+  \begingroup
+    \parindent=16pt
+    \SavedIndent
+  \endgroup
+}
+\setlength{\parindent}{0pt}
+% Environment to write code inside of it
+\newenvironment{code}
+{
+	\color{code}
+	\verbatimtab[2]
+}
+{
+	\endverbatimtab
+}
+
+% Shortcut to include figures with caption
+\newcommandx{\fig}[3][1=0.9, 2=0.5]{
+	\includegraphics[width=#1\linewidth, height=#2\linewidth]{#3}
+}
+
+\NewEnviron{NTable}[3]{
+  \def\arraystretch{#2}% Set the vertical padding for the table
+  \setlength\tabcolsep{#3}
+  \begin{tabular}{|*{#1}{c|}}% Modify the column specification as needed
+    \hline
+    \BODY
+    \hline
+  \end{tabular}%
+}

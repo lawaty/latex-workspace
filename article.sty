@@ -1,0 +1,88 @@
+\usepackage{general}
+
+% ------------- Commands & Environments ------------- 
+\definecolor{Heading}{HTML}{333333}
+
+% Very First Title Styling
+\newcommand{\topic}[1]{
+	\begin{center}
+		\begin{Huge}
+			\textbf{#1}
+		\end{Huge}
+	\end{center}
+}
+
+\newcommand{\desc}[1]{
+	\begin{center}
+		\begin{large}
+			\textbf{#1}
+		\end{large}
+	\end{center}
+}
+
+% Heading lvl1
+\newcommand{\hI}[1]{
+	\begin{LARGE}
+		\color{Heading}
+		\section{#1}
+	\end{LARGE}
+	\noindent
+}
+
+% Heading lvl1 without numbering
+\newcommand{\hIn}[1]{
+	\begin{LARGE}
+		\color{Heading}
+		\section*{#1}
+	\end{LARGE}
+	\noindent
+}
+
+% Heading lvl2
+\newcommand{\hII}[1]{
+	\begin{large}
+		\color{black}
+		\subsection{#1}
+	\end{large}
+	\noindent
+}
+
+% Heading lvl2 without numbering
+\newcommand{\hIIn}[1]{
+	\begin{large}
+		\color{black}
+		\subsection*{#1}
+	\end{large}
+	\noindent
+}
+
+% Heading lvl3
+\newcommand{\hIII}[1]{
+	\begin{large}
+		\color{black}
+		\subsubsection{#1}
+	\end{large}
+	\noindent
+}
+
+% Heading lvl3 without numbering
+\newcommand{\hIIIn}[1]{
+	\begin{large}
+		\color{black}
+		\subsubsection*{#1}
+	\end{large}
+	\noindent
+}
+
+% Shortcut to split page into two columns
+\newcommand{\twocolumns}[3][]{
+\begin{minipage}[t][#1\textheight]{.55\textwidth}
+	#2
+\end{minipage}
+\hfill\hfill
+\begin{minipage}[t][#1\textheight]{.35\textwidth}
+	#3
+\end{minipage} \\~\\
+}
+
+\newcommand{\withDate}[2]{\noindent\textbf{#1}\hfill\colored{red}{#2}}

@@ -1,0 +1,20 @@
+\usetheme{Boadilla}
+
+\definecolor{accent}{HTML}{F88900}
+
+\definecolor{UBCblue}{HTML}{b88900} % UBC Blue (primary)
+\usecolortheme[named=UBCblue]{structure}
+
+\useoutertheme{split}
+\usefonttheme[onlysmall]{structurebold}
+
+\setbeamertemplate{headline}
+{%
+	\leavevmode%
+	\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex]{section in head/foot}%
+		\hbox to .5\paperwidth{\hfil\insertsectionhead\hfil}
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex]{subsection in head/foot}%
+		\hbox to .5\paperwidth{\hfil\insertsubsectionhead\hfil}
+	\end{beamercolorbox}%
+}
